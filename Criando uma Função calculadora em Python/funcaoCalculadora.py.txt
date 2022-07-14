@@ -1,0 +1,26 @@
+def calculadora(valor1, valor2, op):
+    if (op == 1):
+        calcula = valor1 + valor2
+        return calcula
+    elif (op == 2):
+        calcula = valor1 - valor2
+        return calcula
+    elif (op == 3):
+        calcula = valor1 * valor2
+        return calcula
+    elif (op == 4):
+        calcula = valor1 / valor2
+        return calcula
+    else:    
+        return 0
+  
+print("Tipo de Operação")
+print(" 1 = Adicão \n 2 = Subtração \n 3 = Multiplicação \n 4 = Divisão \n")
+
+valor1 = int(input('Digite o primeiro valor: '))
+valor2 = int(input('Digite o segundo valor: '))
+op = int(input('Qual operação? '))
+
+resultado = calculadora(valor1, valor2, op)
+
+print(f'Resultado da operação entre {valor1} e {valor2} é {resultado}.')
