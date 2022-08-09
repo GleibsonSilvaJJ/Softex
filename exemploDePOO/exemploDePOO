@@ -1,0 +1,32 @@
+function Banco(conta, saldo, tipoDeConta, agencia) {
+  this.conta = conta
+  this.saldo = saldo
+  this.tipoDeConta = tipoDeConta
+  this.agencia = agencia
+  this.buscarSaldo = function () {
+    return this.saldo
+  }
+
+  this.saque = function (valor) {
+    if (valor > this.saldo) {
+      console.log('Saldo Insuficiente.')
+    } else {
+      console.log('Saque Efetuado com Sucesso!')
+      this.saldo -= valor
+    }
+  }
+  this.deposito = function (valor) {
+    this.saldo += valor
+  }
+  this.numeroConta = function () {
+    return this.conta
+  }
+}
+let minhaConta = new Banco('15989-X', 15000, 'F', '03.842')
+
+console.log('Saldo:', minhaConta.buscarSaldo())
+minhaConta.deposito(2750)
+console.log('Novo saldo:', minhaConta.buscarSaldo())
+minhaConta.saque(10000)
+console.log('Novo saldo:', minhaConta.buscarSaldo())
+console.log('Número da conta:', minhaConta.numeroConta())
